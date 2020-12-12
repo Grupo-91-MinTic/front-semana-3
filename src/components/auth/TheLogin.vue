@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div id="login" class="card m-3 p-3" style="width: 100%">
+    <div id="login" class="card mt-3 pt-3" style="width: 100%">
       <h1 class="bg-success text-center p-2">Sprint III</h1>
-      <form class="row justify-content-center">
+      <form class="row justify-content-center" @submit.prevent="loginUser">
         <div class="form-group row p-5 m-5">
           <label for="email" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
@@ -29,7 +29,7 @@
         </div>
         <button
           class="btn btn-success btn-block w-75 my-4"
-          @click.prevent="signgin"
+          @click.prevent="loginUser"
           type="submit"
         >
           Sign in
@@ -38,7 +38,9 @@
     </div>
   </div>
 </template>
+
 <script>
+import swal from "sweetalert";
 export default {
   data() {
     return {
@@ -49,11 +51,17 @@ export default {
     };
   },
   methods: {
-    async signgin() {
-      localStorage.token = 1;
-      if (localStorage.token) {
-        //swal("Exitoso","login exitoso","success");
-        this.$router.push("/home");
+    async loginUser() {
+      try {
+        //let response = await this.$http.post("/api/auth/signin", this.login);
+        let token = 1; //response.data.accessToken;
+        localStorage.setItem("jwt", token);
+        if (token) {
+          swal("Exitoso", "loginexitoso", "success");
+          this.$router.push("/home");
+        }
+      } catch (error) {
+        swal("Error", "Este registro no existe", "error");
       }
     },
   },

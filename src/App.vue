@@ -1,36 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <nav class="navbar navbar-expand-lg">
-        <router-link class="navbar-brand" to="/home">Home</router-link>
-        <button
-          type="button"
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <router-link class="nav-link" to="/about">About</router-link>
-            </li>
-          </ul>
-
-          <form class="form-inline my-2 my-lg-0">
-            <router-link class="nav-link" to="/">
-              <span>
-                Sign in
-              </span>
-            </router-link>
-          </form>
-        </div>
-      </nav>
-    </div>
     <router-view />
   </div>
 </template>
