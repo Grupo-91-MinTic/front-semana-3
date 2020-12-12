@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
    /* Lazy loader */
-   {
+  {
     path: "/",
     name: "login",
     component: () =>

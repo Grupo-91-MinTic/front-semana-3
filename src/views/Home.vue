@@ -1,19 +1,20 @@
 <template>
   <div class="home">
-    <the-home></the-home>
-    <contact-card></contact-card>y
+    <div v-if="localStorage.token === '1'">
+      <contact-card></contact-card>
+    </div>
+    <div v-else>
+    </div>
   </div>
 </template>
 
 <script>
-import ContactCard from '../components/ContactCard.vue';
-import TheHome from '../components/TheHome.vue';
+import ContactCard from "../components/ContactCard.vue";
 
 export default {
   name: "Home",
   components: {
-    TheHome,
     ContactCard
-  }
+  },
 };
 </script>
