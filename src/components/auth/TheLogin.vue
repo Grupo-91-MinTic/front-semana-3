@@ -53,8 +53,8 @@ export default {
   methods: {
     async loginUser() {
       try {
-        //let response = await this.$http.post("/api/auth/signin", this.login);
-        let token = 1; //response.data.accessToken;
+        let response = await this.$http.post("/api/auth/signin", this.login);
+        let token = response.data.accessToken;
         localStorage.setItem("jwt", token);
         if (token) {
           swal("Exitoso", "loginexitoso", "success");

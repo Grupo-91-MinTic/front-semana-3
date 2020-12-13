@@ -1,5 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <div>
+      <page-navigator></page-navigator>
+      <dev-info></dev-info>
+    </div>
 </template>
+<script>
+import DevInfo from '../components/DevInfo.vue'
+import PageNavigator from '../components/PageNavigator.vue'
+export default {
+  components: { DevInfo, PageNavigator },
+}
+</script>
