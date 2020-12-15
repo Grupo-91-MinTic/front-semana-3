@@ -40,11 +40,13 @@
 </template>
 
 <script>
+import VueJwtDecode from "vue-jwt-decode";
 import swal from "sweetalert";
 export default {
   data() {
     return {
       login: {
+        user: {},
         email: "",
         password: "",
       },
@@ -56,8 +58,16 @@ export default {
         let response = await this.$http.post("/api/auth/signin", this.login);
         let token = response.data.accessToken;
         localStorage.setItem("jwt", token);
+
+        let decoded = VueJwtDecode.decode(token);
+        console.log("holadecode", decoded);
+
         if (token) {
-          swal("Exitoso", "loginexitoso", "success");
+
+          let token = localStorage.getItem("jwt");
+          let decoded = VueJwtDecode.decode(token);
+
+          swal("Exitoso", "Bienvenido " + decoded.name, "success");
           this.$router.push("/home");
         }
       } catch (error) {

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div id="contact" class="card m-3" style="max-width: 540px">
+    <div id="contact" class="card m-3 bg-dark" style="max-width: 540px">
       <div class="row no-gutters">
         <div class="col-md-4 p-3">
-          <img :src="avatar" class="card-img" alt="Andres M. Prieto A" />
+          <img :src="user.avatar" class="card-img" :alt="user.name" />
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title text-center">{{ name }}</h5>
-            <blockquote class="text-center">{{ rol }}</blockquote>
-            <p class="card-text">{{ cardDescription }}</p>
-            <a :href="github" class="btn btn-success d-block" target="blank"
+            <h5 class="card-title text-center">{{ user.name }}</h5>
+            <blockquote class="text-center">{{ user.rol }}</blockquote>
+            <p class="card-text text-justify">{{ user.description }}</p>
+            <a :href="user.profile" class="btn btn-success d-block" target="blank"
               >Meet me</a
             >
           </div>
@@ -20,21 +20,28 @@
   </div>
 </template>
 <script>
+import VueJwtDecode from "vue-jwt-decode";
 export default {
   data() {
     return {
-      avatar: "https://avatars2.githubusercontent.com/u/39841241?s=460&v=4",
-      name: "Andres M. Priero Alvarez",
-      rol: "(Software engineer and frontend Developer)",
-      cardDescription:
-        "I'm a geek pacionated about TI, actually I'm studing at the University, so I make code when it let me do it",
-      github: "https://github.com/AndresMpa",
+      user: {}
     };
+  },
+  methods: {
+    getUserDetails() {
+      let token = localStorage.getItem("jwt");
+      let decoded = VueJwtDecode.decode(token);
+      this.user = decoded;
+    }
+  },
+  created() {
+    this.getUserDetails();
   },
 };
 </script>
 <style lang="css">
 #contact {
   color: #fff;
+  background: #000;
 }
 </style>

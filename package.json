@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "decode": "^0.3.0",
     "sweetalert": "^2.1.2",
     "vue": "^2.6.11",
     "vue-jwt-decode": "^0.1.0",
