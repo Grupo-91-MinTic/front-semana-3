@@ -10,7 +10,10 @@
             <h5 class="card-title text-center">{{ user.name }}</h5>
             <blockquote class="text-center">{{ user.rol }}</blockquote>
             <p class="card-text text-justify">{{ user.description }}</p>
-            <a :href="user.profile" class="btn btn-success d-block" target="blank"
+            <a
+              :href="user.profile"
+              class="btn btn-success d-block"
+              target="blank"
               >Meet me</a
             >
           </div>
@@ -24,7 +27,7 @@ import VueJwtDecode from "vue-jwt-decode";
 export default {
   data() {
     return {
-      user: {}
+      user: {},
     };
   },
   methods: {
@@ -32,7 +35,7 @@ export default {
       let token = localStorage.getItem("jwt");
       let decoded = VueJwtDecode.decode(token);
       this.user = decoded;
-    }
+    },
   },
   created() {
     this.getUserDetails();

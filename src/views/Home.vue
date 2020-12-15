@@ -17,14 +17,14 @@
 <script>
 import PageNavigator from "../components/PageNavigator.vue";
 import ContactCard from "../components/ContactCard.vue";
-import TheHome from '../components/TheHome.vue';
+import TheHome from "../components/TheHome.vue";
 
 export default {
   name: "Home",
   components: {
     PageNavigator,
     ContactCard,
-    TheHome
-  }
+    TheHome,
+  },
 };
 </script>

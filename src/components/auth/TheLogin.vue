@@ -63,7 +63,6 @@ export default {
         console.log("holadecode", decoded);
 
         if (token) {
-
           let token = localStorage.getItem("jwt");
           let decoded = VueJwtDecode.decode(token);
 

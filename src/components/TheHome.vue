@@ -1,8 +1,11 @@
 <template>
   <div>
     <h4>Sprint III</h4>
-    <hr>
-    <p class="text-justify">Proyecto desarrollado por el grupo 91, ciclo III; misión Tic 20-22; desarrollado por </p>
+    <hr />
+    <p class="text-justify">
+      Proyecto desarrollado por el grupo 91, ciclo III; misión Tic 20-22;
+      desarrollado por
+    </p>
   </div>
 </template>
 <script>
