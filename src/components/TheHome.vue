@@ -4,7 +4,7 @@
     <hr />
     <p class="text-justify">
       Proyecto desarrollado por el grupo 91, ciclo III; misión Tic 20-22;
-      desarrollado por
+      desarrollado por Andrés Manuel Prieto Alvarez, Carlos Sneider Soto, Juan Sebastian Orduz, Harold Alejandro 
     </p>
   </div>
 </template>

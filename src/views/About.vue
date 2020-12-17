@@ -8,6 +8,9 @@
 import DevInfo from "../components/DevInfo.vue";
 import PageNavigator from "../components/PageNavigator.vue";
 export default {
-  components: { DevInfo, PageNavigator },
+  components: {
+    DevInfo,
+    PageNavigator,
+  },
 };
 </script>

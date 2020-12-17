@@ -4,7 +4,7 @@ import App from "./App.vue";
 import router from "./router";
 
 const base = axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: "https://desolate-anchorage-18616.herokuapp.com/"
 });
 
 
